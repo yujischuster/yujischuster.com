@@ -1,3 +1,3 @@
-export default function Music() {
+export const Music = () => {
   return <h1>Music</h1>
 }

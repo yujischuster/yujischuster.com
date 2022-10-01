@@ -1,21 +1,38 @@
-import Navbar from "./components/Navbar"
-import Home from "./pages/Home"
-import Projects from "./pages/Projects"
-import Photography from "./pages/Photography"
-import Music from "./pages/Music"
+import { Navbar } from "./components/Navbar"
+import { Home } from "./pages/Home"
+import { Projects } from "./pages/Projects"
+import { Photography } from "./pages/Photography"
+import { Music } from "./pages/Music"
 import { Route, Routes } from "react-router-dom"
 
-function App() {
+const App = () => {
+  const routes = [
+    {
+      path: "/",
+      element: <Home />
+    },
+    {
+      path: "/projects",
+      element: <Projects />
+    },
+    {
+      path: "/photography",
+      element: <Photography />
+    },
+    {
+      path: "/music",
+      element: <Music />
+    },
+  ]
+  const routeElements = routes.map(route => (
+    <Route path={route.path} element={route.element} />
+  ))
+  
   return (
     <>
       <Navbar />
       <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/photography" element={<Photography />} />
-          <Route path="/music" element={<Music />} />
-        </Routes>
+        <Routes>{routeElements}</Routes>
       </div>
     </>
   )

@@ -27,7 +27,7 @@ const App = () => {
   const routeElements = routes.map(route => (
     <Route path={route.path} element={route.element} />
   ))
-  
+
   return (
     <>
       <Navbar />

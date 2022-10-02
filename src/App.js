@@ -8,24 +8,28 @@ import { Route, Routes } from "react-router-dom"
 const App = () => {
   const routes = [
     {
+      id: 0,
       path: "/",
       element: <Home />
     },
     {
+      id: 1,
       path: "/projects",
       element: <Projects />
     },
     {
+      id: 2,
       path: "/photography",
       element: <Photography />
     },
     {
+      id: 3,
       path: "/music",
       element: <Music />
     },
   ]
   const routeElements = routes.map(route => (
-    <Route path={route.path} element={route.element} />
+    <Route key={route.id} path={route.path} element={route.element} />
   ))
 
   return (

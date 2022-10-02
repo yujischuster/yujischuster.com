@@ -4,24 +4,28 @@ import styled from 'styled-components';
 export const Navbar = () => {
   const links = [
     {
+      id: 0,
       path: "/",
       title: "Home"
     },
     {
+      id: 1,
       path: "/projects",
       title: "Projects"
     },
     {
+      id: 2,
       path: "/photography",
       title: "Photography"
     },
     {
+      id: 3,
       path: "/music",
       title: "Music"
     }
   ]
   const linkElements = links.map(link => (
-    <CustomLink to={link.path}>{link.title}</CustomLink>
+    <CustomLink key={link.id} to={link.path}>{link.title}</CustomLink>
   ))
 
   const Nav = styled.nav`
